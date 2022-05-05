@@ -1,0 +1,69 @@
+.main {
+  background-image: url("../../photo/ph.jpg");
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.form-container {
+  font-family: sans-serif;
+  background: linear-gradient(#803b3b, #771f2e);
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
+  width: 400px;
+  height: 450px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  top: 60%;
+  left: 60%;
+  width: 200px;
+  padding: 30px;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  font-size: 30px;
+}
+
+label {
+  font-size: 20px;
+  color: white;
+}
+
+input {
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.button-container button {
+  padding: 5px 15px;
+  background-color: white;
+  border: #771f2e 2px solid;
+}
+
+.error {
+  color: black;
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+.error-password {
+  color: black;
+  font-size: 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.button-google {
+  padding: 10px 15px;
+  background-color: white;
+  border: #771f2e 2px solid;
+  border-radius: 5px;
+}

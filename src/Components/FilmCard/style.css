@@ -1,0 +1,36 @@
+.film-card {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 250px;
+  align-items: center;
+}
+
+.film-card .film-card-image {
+  width: 190px;
+  aspect-ratio: 2/3;
+}
+
+.film-card .film-card-title {
+  font-size: 16px;
+  text-align: center;
+}
+
+.film-card .film-card-description {
+  font-size: 14px;
+  color: grey;
+  height: 200px;
+  overflow: hidden;
+}
+
+.film-card h1 {
+  font-size: 35px;
+  margin-top: 15px;
+  font-weight: bold;
+  color: black;
+}
+
+.film-card h1:hover {
+  border-bottom: 3px solid rgb(134, 17, 17);
+}
+

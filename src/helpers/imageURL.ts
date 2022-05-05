@@ -1,0 +1,1 @@
+export const buildImageUrl = (uri: string, isOriginalSize?: boolean ) => isOriginalSize ? `https://image.tmdb.org/t/p/original/${uri}`  : `https://image.tmdb.org/t/p/w500/${uri}`;

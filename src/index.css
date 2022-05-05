@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+h1,
+p {
+  font-family: Lato;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+}
