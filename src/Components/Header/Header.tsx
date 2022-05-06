@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { authActionCreator } from "../../store/reducers/auth/actionCreator";
 
@@ -21,7 +21,10 @@ const Header = () => {
 
   return (
     <header className="page-header">
-      <span className="title">Netflix clone</span>
+      <Link to="/" className="title">
+        Netflix clone
+      </Link>
+      <p>{user.displayName}</p>
       {isAuth ? (
         <button onClick={handleClick} className="button-container">
           Log out
@@ -31,7 +34,6 @@ const Header = () => {
           Log in
         </button>
       )}
-      <p>{user.displayName}</p>
     </header>
   );
 };

@@ -1,4 +1,35 @@
 .page-header {
-    background-color: brown;
+    background-color: #803b3b;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px 0;
 }
 
+.title {
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+p {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+button {
+    cursor: pointer;
+    padding: 10px 15px;
+    background-color: white;
+    border: #771f2e 2px solid;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+button:hover {
+    background-color: #771f2e;
+    color: white;
+    font-size: 15px;
+}

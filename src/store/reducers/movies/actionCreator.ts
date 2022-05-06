@@ -33,14 +33,13 @@ export const moviesActionCreator = {
     dispatch(moviesActionCreator.setMovies(moviesData));
   },
 
-  fetchMovie: (id: number) => async (dispatch: AppDispatch) => {
-    const reqURI = `/movie/${id}`;
-    const { data: movie }: any = await axios.get(reqURI, {
-      baseURL: BASE_URL,
-    });
-    // dispatch(moviesActionCreator.setMovie())
+  fetchMovie: (id: string) => async (dispatch: AppDispatch) => {
+    const movieData = await moviesRequests.getMovieInfo(id);
+    dispatch(moviesActionCreator.setMovie(movieData));
   },
-  // const {id} = useParams<`id`>()
-  // const {data: movie}: any = useRequest(`/movie/${id}`)
-  // console.log(movie)
+
+  fetchSearch: (search: string) => async (dispatch: AppDispatch) => {
+    const searchData = await moviesRequests.getSearchMovies(search);
+    dispatch(moviesActionCreator.setMovies(searchData));
+  },
 };

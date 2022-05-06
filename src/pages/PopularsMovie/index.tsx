@@ -9,23 +9,13 @@ import { useDispatch } from "react-redux";
 
 import "./style.css";
 import { moviesActionCreator } from "../../store/reducers/movies/actionCreator";
+import { useDebounce } from "../../hooks/useDebounce";
 
 const PopularsMovies = () => {
   const { isAuth } = useTypedSelector((state) => state.auth);
-  const [searchParams, setSearchParams] = useState();
+  const [searchParams, setSearchParams] = useState<string>("");
   const dispatch = useDispatch();
   const { movies } = useTypedSelector((state) => state.movies);
-
-
-
-  useEffect(() => {
-    dispatch(
-      moviesActionCreator.fetchMovies(
-        // searchParams ? "/search/movie" : "/movie/popular",
-        // { query: searchParams }
-      )
-    );
-  }, [dispatch, searchParams]);
 
   const handleChange = (event: any) => {
     event.preventDefault();
@@ -33,7 +23,13 @@ const PopularsMovies = () => {
     setSearchParams(query);
   };
 
-  //  const {data: popFilm}: any = useRequest (searchParams ? '/search/movie' :"/movie/popular", {query: searchParams})
+  const query = useDebounce<string>(searchParams, 500);
+
+  useEffect(() => {
+    query.length
+      ? dispatch(moviesActionCreator.fetchSearch(query))
+      : dispatch(moviesActionCreator.fetchMovies());
+  }, [dispatch, query]);
 
   console.log(movies);
   console.log({ isAuth });

@@ -1,19 +1,17 @@
-import React from 'react'
-import {buildImageUrl} from '../../helpers/imageURL'
+import React from "react";
+import { buildImageUrl } from "../../helpers/imageURL";
+import { IProductionCompany } from "../../models";
 
 interface CompaniesProps {
-    companiesList: {id: number, logo_path: string, name: string, original_country: string}[] // щоб вказати, що це масив об*єктів
+  companiesList: IProductionCompany[]; // щоб вказати, що це масив об*єктів
 }
 
-export const Companies: React.FC<CompaniesProps> = ({companiesList}) => {
+export const Companies: React.FC<CompaniesProps> = ({ companiesList }) => {
   return (
     <>
-      {companiesList.map(el => (
-           <img src={buildImageUrl(el.logo_path)} alt={el.name} key={el.id}/>
+      {companiesList.map((el) => (
+        <img src={buildImageUrl(el.logo_path)} alt={el.name} key={el.id} />
       ))}
-       
     </>
-  )
-}
-
-
+  );
+};

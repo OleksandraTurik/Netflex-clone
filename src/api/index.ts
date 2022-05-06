@@ -21,8 +21,8 @@ export const moviesRequests = {
     return data.results;
   },
 
-  getMovieInfo: async () => {
-    const requestURI = `/movie/popular?${encodeQueryData({
+  getMovieInfo: async (id: string) => {
+    const requestURI = `/movie/${id}?${encodeQueryData({
       api_key: API_KEY,
     })}`;
 

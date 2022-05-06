@@ -1,26 +1,27 @@
 import React, { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { useRequest } from "../../hooks/useRequest";
 import { buildImageUrl } from "../../helpers/imageURL";
-import "./style.css";
 import { Companies } from "../../Components/Companies";
 import { useDispatch } from "react-redux";
-// import { movieActionCreator } from "../../store/reducers/movies/actionCreator";
+import { moviesActionCreator } from "../../store/reducers/movies/actionCreator";
+import { useTypedSelector } from "../../hooks/useTypedSelector";
+
+import "./style.css";
 
 const MovieInfo = () => {
   const dispatch = useDispatch();
+  const { movie } = useTypedSelector((state) => state.movies);
+  const { id } = useParams<`id`>();
 
-  // useEffect(() => {
-  //   dispatch(movieActionCreator.fetchMovie());
-  // }, []);
+  useEffect(() => {
+    dispatch(moviesActionCreator.fetchMovie(id as string));
+  }, [dispatch, id]);
 
-  const {id} = useParams<`id`>()
-  const {data: movie}: any = useRequest(`/movie/${id}`)
-  console.log(movie)
+  console.log(movie);
 
   return (
     <>
-      {movie ? (
+      {movie.title ? (
         <div className="movie-info-container">
           <div
             className="movie-info-cover"
