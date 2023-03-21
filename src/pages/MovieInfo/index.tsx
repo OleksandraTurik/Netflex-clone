@@ -5,8 +5,14 @@ import { Companies } from "../../Components/Companies";
 import { useDispatch } from "react-redux";
 import { moviesActionCreator } from "../../store/reducers/movies/actionCreator";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
+import { StarOutlined } from "@ant-design/icons";
+import { Button } from "antd";
+import FavouriteButton from "../../Components/FavouriteButton";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../../firebase";
 
 import "./style.css";
+
 
 const MovieInfo = () => {
   const dispatch = useDispatch();
@@ -18,6 +24,11 @@ const MovieInfo = () => {
   }, [dispatch, id]);
 
   console.log(movie);
+
+  const handleFavouritecLick = async () => {
+    const docRef = await addDoc(collection( db, 'favourite'), {id: id, movieName: movie.title} )
+    console.log(docRef);
+  };
 
   return (
     <>
@@ -36,7 +47,11 @@ const MovieInfo = () => {
               <div className="movie-info-homebutton">
                 <Link to={"/"}>← Go Home</Link>
               </div>
-              <h1 className="movie-info-title">{movie.title}</h1>
+              <div className="films-info">
+                <h1 className="movie-info-title">{movie.title}</h1>
+                <FavouriteButton onFavouriteClick={handleFavouritecLick} isFavourite={false}/>
+              </div>
+
               <div className="fill"></div>
             </div>
           </div>

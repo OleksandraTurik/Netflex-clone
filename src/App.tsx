@@ -1,6 +1,6 @@
 import React, { Suspense, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { auth } from "./faribase";
+import { auth } from "./firebase";
 import { useTypedSelector } from "./hooks/useTypedSelector";
 import { AppRouter } from "./navigate/AppRouter";
 import { authActionCreator } from "./store/reducers/auth/actionCreator";

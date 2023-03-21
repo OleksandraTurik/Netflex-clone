@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useRequest } from "../../hooks/useRequest";
 import { FilmCard } from "../../Components/FilmCard";
 import { buildImageUrl } from "../../helpers/imageURL";
 import { Search } from "../../Components/Search";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { useDispatch } from "react-redux";
-
-import "./style.css";
 import { moviesActionCreator } from "../../store/reducers/movies/actionCreator";
 import { useDebounce } from "../../hooks/useDebounce";
+
+import "./style.css";
 
 const PopularsMovies = () => {
   const { isAuth } = useTypedSelector((state) => state.auth);
@@ -43,7 +42,7 @@ const PopularsMovies = () => {
         <div className="film-cards">
           {movies.map((el: any, index: any) => (
             <Link to={`/info/${el.id}`}>
-              <FilmCard
+              <FilmCard 
                 title={el.title}
                 key={index}
                 image={buildImageUrl(el.poster_path)}

@@ -3,7 +3,7 @@ import { buildImageUrl } from "../../helpers/imageURL";
 import { IProductionCompany } from "../../models";
 
 interface CompaniesProps {
-  companiesList: IProductionCompany[]; // щоб вказати, що це масив об*єктів
+  companiesList: IProductionCompany[];
 }
 
 export const Companies: React.FC<CompaniesProps> = ({ companiesList }) => {

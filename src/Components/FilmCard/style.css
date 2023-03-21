@@ -4,6 +4,7 @@
   flex-direction: column;
   width: 250px;
   align-items: center;
+  gap: 10px;
 }
 
 .film-card .film-card-image {
@@ -25,12 +26,17 @@
 
 .film-card h1 {
   font-size: 35px;
-  margin-top: 15px;
   font-weight: bold;
   color: black;
+  margin-bottom: 0;
 }
 
 .film-card h1:hover {
   border-bottom: 3px solid rgb(134, 17, 17);
 }
 
+.card-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

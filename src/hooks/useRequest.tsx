@@ -15,7 +15,7 @@ export const useRequest = (url: string, params?: queryData) => {
   const fetchData = async (request_url: string) => {
     const res = await axios.get(request_url, {
       baseURL: BASE_URL,
-    });
+    }); 
     setData(res.data.results ?? res.data);
   };
 

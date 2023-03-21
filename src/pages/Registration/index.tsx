@@ -9,9 +9,14 @@ const Registration = () => {
     const handleSubmit = (values: MyFormValues) => {
       dispatch(authActionCreator.register(values.email, values.password))
     }
+
+    const handleClick = () => {
+      dispatch(authActionCreator.loginWithGoogle())
+    }
+
   return (
     <div className='main'>
-      <LoginForm onSubmit={handleSubmit} formType='registration'/>
+      <LoginForm onGoogleClick={handleClick} onSubmit={handleSubmit} formType='registration'/>
     </div>
   )
 }

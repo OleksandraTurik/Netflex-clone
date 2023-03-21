@@ -9,7 +9,7 @@ import {
   User,
 } from "firebase/auth";
 import { AppDispatch } from "../..";
-import { auth, provider } from "../../../faribase";
+import { auth, provider } from "../../../firebase";
 import { IUser } from "../../../models";
 import {
   AuthActionEnum,

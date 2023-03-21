@@ -11,18 +11,14 @@ import { useDispatch } from 'react-redux';
 import { authActionCreator } from '../../store/reducers/auth/actionCreator';
 
 interface LoginFormProps {
-  onSubmit: (values: MyFormValues) => void // вона нічого не вертає
-  formType: 'login' | 'registration'
+  onSubmit: (values: MyFormValues) => void;
+  formType: 'login' | 'registration';
+  onGoogleClick: any;
 }
 
-export const LoginForm: React.FC<LoginFormProps> = ({onSubmit, formType}) => {
+export const LoginForm: React.FC<LoginFormProps> = ({onSubmit, formType, onGoogleClick}) => {
   const initialValues: MyFormValues = { email: "", password: "" };
   const dispatch = useDispatch()
-
-  const handleClick = () => {
-    dispatch(authActionCreator.loginWithGoogle())
-  }
-  
 
   return (
       <div className="form-container">
@@ -51,7 +47,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({onSubmit, formType}) => {
                   <button type='submit'>Log in</button>
               </div>
               <div>
-                <button onClick={handleClick} className="button-google" >Log in with Google</button>
+                <button onClick={onGoogleClick} className="button-google" >Log in with Google</button>
               </div>
             </div>
           </Form> 

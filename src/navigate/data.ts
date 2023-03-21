@@ -27,5 +27,11 @@ export const routes: Routes[] =[
         path: '/registration',
         element: lazy(()=> import("../pages/Registration")),
         isProtected:false
+    },
+
+    {
+        path: '/profile',
+        element: lazy(()=> import("../pages/Profile")),
+        isProtected:true
     }
 ]
