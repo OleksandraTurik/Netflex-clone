@@ -30,13 +30,11 @@
   border: 2px solid black;
   margin-right: 15px;
   border-radius: 8px;
-  background-color: white;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
+  border: 1px solid rgb(119, 25, 25);
 }
 
 .search-card input:focus {
-  border: 2px solid rgb(119, 25, 25);
+  border: 1px solid rgb(119, 25, 25);
   outline: none;
   width: 150%;
   transition: all 0.4s ease-in-out;

@@ -1,8 +1,6 @@
 import { StarFilled, StarOutlined } from "@ant-design/icons";
 import { Button, message } from "antd";
-import { addDoc } from "firebase/firestore";
-import React, { FC, useState } from "react";
-import { db } from "../../firebase";
+import React, { FC } from "react";
 
 interface FavouriteButtonProps {
   onFavouriteClick: () => void;
@@ -23,7 +21,7 @@ const FavouriteButton: FC<FavouriteButtonProps> = ({
   };
 
   return (
-    <div>
+    <div style={{margin: '0 auto'}}>
       <Button
         onClick={handleClickStar}
         className="btn-star"

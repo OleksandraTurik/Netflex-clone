@@ -51,7 +51,6 @@ const MovieInfo = () => {
                 <h1 className="movie-info-title">{movie.title}</h1>
                 <FavouriteButton onFavouriteClick={handleFavouritecLick} isFavourite={false}/>
               </div>
-
               <div className="fill"></div>
             </div>
           </div>
